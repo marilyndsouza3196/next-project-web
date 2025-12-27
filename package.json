@@ -2,7 +2,6 @@
   "name": "next-project-web",
   "version": "0.1.0",
   "private": true,
-  
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,6 +10,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.7",
+    "framer-motion": "^12.23.12",
     "next": "15.4.2",
     "react": "19.1.0",
     "react-dom": "19.1.0"

@@ -1,0 +1,38 @@
+
+  .container {
+    display: flex;
+    width: 100%;
+  }
+  .formSection {
+    width: 40%;
+    background: #fff;
+    padding: 20px;
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+  }
+  .previewSection {
+    width: 60%;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  .mResumePrview {
+    margin-top: 0;
+  }
+  .mFormField {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .resumePreview {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    min-height: 90%;
+  }
+  .sectionTitle {
+    font-weight: bold;
+    margin-top: 20px;
+    border-bottom: 1px solid #ccc;
+  }

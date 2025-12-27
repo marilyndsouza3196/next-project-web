@@ -1,0 +1,18 @@
+ <div className="container-fluid  m-eight-main" >
+   <div className="container-fluid">
+    {/* <ParallaxExample></ParallaxExample> */}
+   <RenderedBox></RenderedBox>
+    </div>
+    <div>
+    <div className="container-fluid ">
+    <div className="row">
+    <Features></Features>
+    <Features></Features>
+    <Features></Features>
+    {/* <Features title="Daily Task Tracker " desc="This feature will make you never miss out on any important work " button="Show now" href="/todo"></Features>
+    <Features title="Excel Generator" desc="Your one stop solution to Data collection; all in Excel" button="Show now" ></Features>
+    <Features title="Chrome extension lists" desc="All Chrome extensions in one place; to make work better" button="Show now" ></Features> */}
+    </div>
+    </div>
+    </div>
+    </div>

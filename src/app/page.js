@@ -1,101 +1,59 @@
+"use client"
 import Image from "next/image";
 import styles from "./page.module.css";
-
+import Features from "./components/Features";
+import {RenderedBox} from "./components/RenderedBox";
+import ParallaxExample from "./components/ParallaxExample";
+import { useState, useEffect } from "react";
+import CreativeCarousel from "./components/CreativeCarousel";
 export default function Home() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroHeight = document.querySelector(".hero-section")?.offsetHeight || 0;
+      const scrollY = window.scrollY;
+      setScrolled(scrollY > heroHeight - 100); // adjust sensitivity
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <>
-    <div className="m-eight-main">
-    <h1> 18Squares</h1>
-    <h4>We are sure to be coming to your service soon</h4>
+    <header className={scrolled ? "scrolled" : ""}>
+        <h1>18 Squares</h1>
+        <nav>
+            <ul>
+                {/* <li><a href="#">Home</a></li> */}
+                <li><a href="#">Catalog</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+  <section className="hero-section">
+  <div className="hero-content">
+    <h1 className="title">18 Squares</h1>
+    <p className="subtitle">Discover, Design & Create</p>
+  </div>
+</section>
+<section>
+<CreativeCarousel />
+</section>
+<section>
+    <div className="container-fluid features-section ">
+    <div className="row">
+    <Features title=" European CV builder" desc="Our solution to an impactful resume, built to create instantly”" button="Show now" href="/cvBuilder"></Features>
+    <Features title="Reset and Rise System " desc="When you need to unwind, you go nowhere eles" button="Coming soon " ></Features>
+    <Features title="Where next" desc="Our one stop shop to make work better" button="Show now" ></Features>
     </div>
+    </div>
+    </section>
+    <section className="extra">
+      
+    </section>
     </>
-    // <div className={styles.page}>
-    //   <main className={styles.main}>
-    //     <Image
-    //       className={styles.logo}
-    //       src="/next.svg"
-    //       alt="Next.js logo"
-    //       width={180}
-    //       height={38}
-    //       priority
-    //     />
-    //     <ol>
-    //       <li>
-    //         Get started by editing <code>src/app/page.js</code>.
-    //       </li>
-    //       <li>Save and see your changes instantly.</li>
-    //     </ol>
-
-    //     <div className={styles.ctas}>
-    //       <a
-    //         className={styles.primary}
-    //         href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-    //         target="_blank"
-    //         rel="noopener noreferrer"
-    //       >
-    //         <Image
-    //           className={styles.logo}
-    //           src="/vercel.svg"
-    //           alt="Vercel logomark"
-    //           width={20}
-    //           height={20}
-    //         />
-    //         Deploy now
-    //       </a>
-    //       <a
-    //         href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-    //         target="_blank"
-    //         rel="noopener noreferrer"
-    //         className={styles.secondary}
-    //       >
-    //         Read our docs
-    //       </a>
-    //     </div>
-    //   </main>
-    //   <footer className={styles.footer}>
-    //     <a
-    //       href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       <Image
-    //         aria-hidden
-    //         src="/file.svg"
-    //         alt="File icon"
-    //         width={16}
-    //         height={16}
-    //       />
-    //       Learn
-    //     </a>
-    //     <a
-    //       href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       <Image
-    //         aria-hidden
-    //         src="/window.svg"
-    //         alt="Window icon"
-    //         width={16}
-    //         height={16}
-    //       />
-    //       Examples
-    //     </a>
-    //     <a
-    //       href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       <Image
-    //         aria-hidden
-    //         src="/globe.svg"
-    //         alt="Globe icon"
-    //         width={16}
-    //         height={16}
-    //       />
-    //       Go to nextjs.org →
-    //     </a>
-    //   </footer>
-    // </div>
   );
 }
