@@ -42,7 +42,7 @@ export default function Home() {
 <section>
 <CreativeCarousel />
 </section>
-<section>
+{/* <section>
     <div className="container-fluid features-section ">
     <div className="row">
     <Features title=" European CV builder" desc="Our solution to an impactful resume, built to create instantly”" button="Show now" href="/cvBuilder"></Features>
@@ -50,7 +50,7 @@ export default function Home() {
     <Features title="Where next" desc="Our one stop shop to make work better" button="Show now" ></Features>
     </div>
     </div>
-    </section>
+    </section> */}
     <section className="extra">
       
     </section>
